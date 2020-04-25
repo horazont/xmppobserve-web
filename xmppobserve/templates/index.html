@@ -32,13 +32,15 @@
 			</ul>
 			<p>Plus: Built-in certificate expiry checks!</p>
 		</li>
-		<li><p><strong>Geo- and AS-Redundant monitoring:</strong> The monitoring
+		<li><p><strong>Geo- and <a href="https://en.wikipedia.org/wiki/Autonomous_system_(Internet)"><abbr title="Autonomous System">AS</abbr></a>-Redundant monitoring:</strong> The monitoring
 		stack is replicated between different data centers in Germany and
 		Austria. This makes the checks more reliable, as an outage at one
 		hoster will not cause unnecessary alerts. You will still only receive
 		one alert if something breaks.</p></li>
 		<li><p><strong>Industry-standard Monitoring Stack:</strong>
-		Prometheus &amp; Alertmanager</p></li>
+		<a href="https://prometheus.io/">Prometheus</a> &amp; Alertmanager,
+		using the
+		<a href="https://github.com/horazont/prometheus-xmpp-blackbox-exporter">XMPP Blackbox Exporter</a>.</p></li>
 		<li><p><strong>E-Mail-based alerting:</strong> All alerts concerning
 		your domain(s) end up in your inbox. Other options may be offered in
 		the future.</p>
