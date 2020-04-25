@@ -61,6 +61,11 @@ a.anchor:before {
     margin-left: -1.5em;
 }
 
+*:target {
+    background-color: #ff8;
+    box-shadow: 0 0 0.5em #ff8;
+}
+
 *:hover > a.anchor:before,
 a.anchor:focus:before {
     opacity: 1.0;
