@@ -1,0 +1,76 @@
+html {
+    font-family: 'DejaVu Sans Mono', 'Courier New', monospace;
+}
+
+body {
+    font-size: 100%;
+    color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: black;
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin: 0;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+    color: inherit;
+}
+
+li {
+    line-height: 1.5;
+}
+
+ul, ol {
+    margin: 0;
+    margin-bottom: 1.5em;
+}
+
+html {
+    background-color: #222;
+}
+
+body {
+    max-width: 63em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eee;
+    padding: 1.5em;
+    padding-left: 3em;
+    box-shadow: 0 0 5px black;
+    border-radius: 1px;
+}
+
+a.anchor {
+    color: inherit;
+    display: inline-block;
+    text-decoration: none;
+    /* margin-left: -1em; */
+}
+
+a.anchor:before {
+    content: '¶';
+    opacity: 0.2;
+    position: relative;
+    width: 1.5em;
+    text-align: center;
+    display: inline-block;
+    margin-left: -1.5em;
+}
+
+*:hover > a.anchor:before,
+a.anchor:focus:before {
+    opacity: 1.0;
+}
+
+.a11y-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    top: -100px;
+}
+*/

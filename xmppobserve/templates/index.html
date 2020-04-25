@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<body>
+{% extends "base.html" %}
+{% block head_lead %}
+	<title>observe.jabber.network</title>
+	<meta name="description" content="Free monitoring-as-a-service for the federated XMPP/Jabber network.">
+{% endblock %}
+{% block body %}
 	<h1>observe.jabber.network</h1>
-	<h2 id="what">What is this?</h2>
-	<p>First of all, it is a work in progress.</p>
-	<p>Second of all, it is intended to be a Monitoring-as-a-Service platform
-	for operators of federated XMPP services.</p>
-	<h3 id="features">Features</h3>
+
+	<h2 id="what"><a href="#what" class="anchor">What is this?</a></h2>
+	<p><em>observe.jabber.network</em> is a <strong>free
+	Monitoring-as-a-Service platform for operators of federated XMPP
+	services</strong>. We offer multiple different types of checks against
+	your XMPP service and real-time email notifications about problems.</p>
+
+	<h2 id="toc"><a href="#toc" class="anchor">Table of Contents</a></h3>
+	<ol class="toc">
+		<li><a href="#features">Features</a></li>
+		<li><a href="#criteria">Criteria for participating</a></li>
+		<li><a href="#help">How to help</a></li>
+		<li><a href="#faq">Questions &amp; Answers</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ol>
+
+	<h2 id="features"><a href="#features" class="anchor">Features</a></h3>
 	<ul>
 		<li><p><strong>Multiple check types available:</strong></p>
 			<ul>
@@ -32,42 +48,103 @@
 		be; this is because it is too tightly integrated in the entire other
 		stack of services.)</p></li>
 		<li><p><strong>Free as in Beverages:</strong> This service is offered
-		free of charge to all operators of federated XMPP servers, no matter
-		the size.</p></li>
+		free of charge to <a href="#criteria">all operators of federated XMPP
+		servers</a>, no matter the size.</p></li>
 	</ul>
-	<h2 id="why">Why is this?</h2>
+
+	<h2 id="criteria"><a href="#criteria" class="anchor">Criteria for participating</a></h2>
+	<p>We offer this service free-of-charge to improve the XMPP Instant
+	Messaging network. To use the benefits of this service, your domain needs
+	to fulfill all of the following criteria:</p>
+	<ul>
+		<li><strong>Federated:</strong> Your domain must federate with other
+		services (you may exclude federation with select misbehaving services,
+		e.g. to fight spam).</li>
+		<li><strong>No spam:</strong> Your domain must not have been on the
+		<a href="https://github.com/JabberSPAM/blacklist">XMPP Spam Blacklist</a>
+		in the past 365 days.</li>
+	</ul>
+	<p>Yes. That’s it.</p>
+	<p>Most notably, it is <strong>not required</strong> to be free of charge,
+	offer public registrations, or have more than X users. No fancy limits
+	here.</p>
+
+	<h2 id="help"><a href="#help" class="anchor">How to help?</a></h2>
+	<h3 id="help-accounts"><a href="#help-accounts" class="anchor">Ping accounts</a></h3>
+	<p>If you want to help improve this service, we are currently looking for
+	ping accounts.</p>
+	<p>In order to improve the effectiveness of the ping service, we need more
+	accounts to send
+	<a href="https://xmpp.org/extensions/xep-0199.html"><abbr title="XEP-0199 (XMPP Ping)">XEP-0199</abbr></a>
+	pings from. If you can provide an account which fulfills all of the
+	following criteria, please get in touch:</p>
+	<ul>
+		<li>The account must not be used for anything else.</li>
+		<li>The account must not have any rate-limits affecting logins, or
+		the rate limit must allow more than 16 logins per minute per source
+		IP.</li>
+		<li>The account must not have any rate-limits affecting IQ traffic
+		applied, or it must allow more than 16 IQ request/reply pairs per
+		minute.</li>
+	</ul>
+	<p>In addition, we are currently especially looking for accounts which
+	are:</p>
+	<ul>
+		<li>Hosted on servers which are not Prosody 0.11.x.</li>
+		<li>Hosted on servers outside of Germany.</li>
+	</ul>
+	<p>If you can offer an account which fulfills the criteria, please
+	<a href="#contact">get in touch</a>.</p>
+
+	<h2 id="faq"><a href="#faq" class="anchor">Questions &amp; Answers</a></h2>
+
+	<h3 id="why"><a href="#faq-why" class="anchor">Why is this?</a></h3>
 	<p>I’ve seen people needing such a service. I have the infrastructure to
 	run it. So why not?</p>
-	<h2 id="faq">Questions &amp; Answers</h2>
-	<h3>Okay, where is the catch?</h3>
+
+	<h3 id="faq-catch"><a href="#faq-catch" class="anchor">Okay, where is the catch?</a></h3>
 	<p>There is none. Well, okay, there <em>might</em> be one in the future:
 	I run this in my free time. I run this on hardware and software which I
 	operate in a semi-professional manner anyways. So if this goes beyond the
 	capacities of the existing hard-/software stack, I may close
 	registrations.</p>
-	<p>In addition, only servers which federate with other XMPP servers
-	qualify. This is an arbitrary restriction, maybe, but I don’t want to
-	support closed silos. Those will be commercial deployments in many cases
-	and they should have their own ressources to do this.</p>
+	<p>In addition, <a href="#criteria">only servers which federate with other
+	XMPP servers qualify</a>. This is an arbitrary restriction, maybe, but I
+	don’t want to support closed silos. Those will be commercial deployments in
+	many cases and they should have their own ressources to do this.</p>
 	<p>Other than that, as mentioned, there is no catch. I run this stack
 	anyways; adding a few more recipients and targets is no big deal.</p>
-	<h3>This is awesome, how can I help?</h3>
-	<p>If you can spare some resources on your server, it would be useful to
-	have more accounts to send federated ping probes from.</p>
-	<p>Specifically, if you run a non-Prosody server or a server outside of
-	Germany, we are currently interested in those. Contact me as mentioned
-	below.</p>
-	<p><strong>Note:</strong> Due to the high amount and abnormal nature of
-	the traffic which will originate from those accounts, you need to prove
-	that you own the domain of the account to donate an account.</p>
-	<h3>This is great, where do I apply for monitoring?</h3>
-	<p>Send an XMPP message to me, Jonas Schäfer, at
-	<a href="xmpp:jonas@zombofant.net">jonas@zombofant.net</a>. I will ask you
-	for proof that you own the domain you want to have monitored, which you
-	will prove by contacting me from an address published in the XEP-0157
-	Contact Information of your server.</p>
-	<p>If your deployment is a small private one and your server does not
-	publish this information, I will find another way for you to prove
-	ownership over the domain.</p>´
 
-</body>
+	<h3 id="faq-help"><a href="#faq-help" class="anchor">This is awesome, how can I help?</a></h3>
+	<p><a href="#help">See above!</a></p>
+
+	<h3 id="faq-apply"><a href="#faq-apply" class="anchor">This is great, where do I apply for monitoring?</a></h3>
+	<ol>
+		<li>Check the <a href="#features">feature list</a> above and think
+		about which checks you want for your domain.</li>
+		<li>Make a list of domains you want to have monitored.</li>
+		<li>Make a list of all further questions you have about the service.</l>
+		<li>Pick an email address which will receive the monitoring alerts.</li>
+		<li><a href="#contact">Get in touch with me!</a></li>
+	</ol>
+
+	<h2 id="contact"><a href="#contact" class="anchor">Contact</a></h2>
+	<p>This service is brought to you by <a href="https://sotecware.net">Jonas Schäfer</a>.</p>
+	<p>To apply for monitoring, submit feedback, donate a ping account or
+	any other matters, contact me:</p>
+	<ul>
+		<li>via XMPP: <a href="xmpp:jonas@zombofant.net">jonas@zombofant.net</a></li>
+		<li>via E-Mail: <a href="mailto:jonas@zombofant.net">jonas@zombofant.net</a></li>
+	</ul>
+	<p><strong>Use of OMEMO:</strong> I do not use OMEMO. Please do not try to
+	contact me with OMEMO enabled. Not all of my clients support it, and it
+	would be a shame if I lost your contact request. For encrypted requests,
+	please use <a href="https://sotecware.net/pubkey.gpg">my GPG key</a> and
+	send me an encrypted email.</p>
+	<p><strong>Add me to your contact list:</strong> As an anti-spam measure,
+	you will have to add me to your contact list if you contact me via
+	XMPP. Please send a <em>short</em> message alongside your request which
+	mentions this service so that I know where you’re coming from. (If you
+	already know me by a different XMPP address and have me in your roster,
+	just contact me via that one.)</p>
+{% endblock %}
