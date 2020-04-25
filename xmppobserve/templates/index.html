@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<body>
+	<h1>observe.jabber.network</h1>
+	<h2 id="what">What is this?</h2>
+	<p>First of all, it is a work in progress.</p>
+	<p>Second of all, it is intended to be a Monitoring-as-a-Service platform
+	for operators of federated XMPP services.</p>
+	<h3 id="features">Features</h3>
+	<ul>
+		<li><p><strong>Multiple check types available:</strong></p>
+			<ul>
+				<li>Client-to-Server stream establishment (RFC 6120/XEP-0368)</li>
+				<li>Server-to-Server stream establishment (RFC 6120/XEP-0368)</li>
+				<li>Federated server pings (XEP-0199)</li>
+				<li>In-Band Registration checks (XEP-0077)</li>
+			</ul>
+			<p>Plus: Built-in certificate expiry checks!</p>
+		</li>
+		<li><p><strong>Geo- and AS-Redundant monitoring:</strong> The monitoring
+		stack is replicated between different data centers in Germany and
+		Austria. This makes the checks more reliable, as an outage at one
+		hoster will not cause unnecessary alerts. You will still only receive
+		one alert if something breaks.</p></li>
+		<li><p><strong>Industry-standard Monitoring Stack:</strong>
+		Prometheus &amp; Alertmanager</p></li>
+		<li><p><strong>E-Mail-based alerting:</strong> All alerts concerning
+		your domain(s) end up in your inbox. Other options may be offered in
+		the future.</p>
+		<li><p><strong>Free as in Freedom:</strong> All software components
+		used, including this web frontend, are free and libre software. (The
+		configuration management is currently not, and will most likely never
+		be; this is because it is too tightly integrated in the entire other
+		stack of services.)</p></li>
+		<li><p><strong>Free as in Beverages:</strong> This service is offered
+		free of charge to all operators of federated XMPP servers, no matter
+		the size.</p></li>
+	</ul>
+	<h2 id="why">Why is this?</h2>
+	<p>I’ve seen people needing such a service. I have the infrastructure to
+	run it. So why not?</p>
+	<h2 id="faq">Questions &amp; Answers</h2>
+	<h3>Okay, where is the catch?</h3>
+	<p>There is none. Well, okay, there <em>might</em> be one in the future:
+	I run this in my free time. I run this on hardware and software which I
+	operate in a semi-professional manner anyways. So if this goes beyond the
+	capacities of the existing hard-/software stack, I may close
+	registrations.</p>
+	<p>In addition, only servers which federate with other XMPP servers
+	qualify. This is an arbitrary restriction, maybe, but I don’t want to
+	support closed silos. Those will be commercial deployments in many cases
+	and they should have their own ressources to do this.</p>
+	<p>Other than that, as mentioned, there is no catch. I run this stack
+	anyways; adding a few more recipients and targets is no big deal.</p>
+	<h3>This is awesome, how can I help?</h3>
+	<p>If you can spare some resources on your server, it would be useful to
+	have more accounts to send federated ping probes from.</p>
+	<p>Specifically, if you run a non-Prosody server or a server outside of
+	Germany, we are currently interested in those. Contact me as mentioned
+	below.</p>
+	<p><strong>Note:</strong> Due to the high amount and abnormal nature of
+	the traffic which will originate from those accounts, you need to prove
+	that you own the domain of the account to donate an account.</p>
+	<h3>This is great, where do I apply for monitoring?</h3>
+	<p>Send an XMPP message to me, Jonas Schäfer, at
+	<a href="xmpp:jonas@zombofant.net">jonas@zombofant.net</a>. I will ask you
+	for proof that you own the domain you want to have monitored, which you
+	will prove by contacting me from an address published in the XEP-0157
+	Contact Information of your server.</p>
+	<p>If your deployment is a small private one and your server does not
+	publish this information, I will find another way for you to prove
+	ownership over the domain.</p>´
+
+</body>
