@@ -78,3 +78,27 @@ a.anchor:focus:before {
     overflow: hidden;
     top: -100px;
 }
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.5em;
+    }
+
+    /* $h-small-sizes: [150.0%, 138.31618672%, 127.54245006%, 117.60790225%, 108.44717712%, 100.0%]; */
+
+    h1 {
+        font-size: 150%;
+    }
+
+    h2 {
+        font-size: 138.32%;
+    }
+
+    h3 {
+        font-size: 127.54%;
+    }
+
+    ul {
+        padding-left: 1em;
+    }
+}
