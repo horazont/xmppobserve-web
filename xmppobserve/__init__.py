@@ -6,6 +6,7 @@ import quart.logging
 from quart import (
     Quart, render_template,
     has_request_context, request,
+    current_app,
 )
 
 
@@ -20,6 +21,23 @@ class RequestFormatter(logging.Formatter):
 
 app = Quart(__name__)
 app.config.from_envvar("XMPPOBSERVE_WEB_CONFIG")
+
+
+@app.before_request
+async def rewrite_remote_addr():
+    request.real_remote_addr = request.remote_addr
+
+    trusted_proxies = current_app.config.get("TRUSTED_PROXIES", [])
+    if request.remote_addr not in trusted_proxies:
+        return
+
+    try:
+        real_addrs = request.headers["X-Forwarded-For"]
+    except KeyError:
+        return
+
+    client_addr = real_addrs.split(",")[0].strip()
+    request.real_remote_addr = client_addr
 
 
 @app.route("/", methods=["GET", "POST"])

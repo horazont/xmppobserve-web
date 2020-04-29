@@ -41,7 +41,7 @@ def get_request_id():
     else:
         return "{}@{}".format(
             getattr(request, "xmppobserve_id", "-"),
-            request.remote_addr,
+            request.real_remote_addr,
         )
 
 
@@ -102,7 +102,7 @@ def _handle_api_error(exc):
 
 @ratelimit.rate_limiter_plugin("IP_RATE_LIMIT")
 def ip_rate_limiter():
-    addr = ipaddress.ip_address(request.remote_addr)
+    addr = ipaddress.ip_address(request.real_remote_addr)
     if getattr(addr, "ipv4_mapped", None) is not None:
         addr = addr.ipv4_mapped
     if addr.version == 4:
