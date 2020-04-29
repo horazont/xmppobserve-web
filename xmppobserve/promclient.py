@@ -1,0 +1,2 @@
+class ProberClient:
+    CONFIG_ENDPOINTS = "PROBER_ENDPOINTS"
