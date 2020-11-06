@@ -1,4 +1,5 @@
 import base64
+import functools
 import ipaddress
 import json
 import logging
@@ -18,12 +19,20 @@ from quart import (
     Blueprint, current_app, request, abort, Response,
     has_request_context,
 )
+import quart_cors
 
 from . import ratelimit
 
 
 logger = logging.getLogger(__name__)
 v1 = Blueprint("api", __name__, url_prefix="/api/v1")
+v1 = quart_cors.cors(
+    v1,
+    allow_origin="*",
+    allow_methods=["POST", "OPTIONS"],
+    allow_credentials=False,
+    allow_headers=["Content-Type", "X-Yada"],
+)
 
 
 @v1.before_request

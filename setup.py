@@ -13,6 +13,7 @@ with open(os.path.join(here, "README.rst"), encoding="utf-8") as f:
 
 install_requires = [
     'quart~=0.11',
+    'quart-cors~=0.2',
     'aiohttp~=3.6',
     'prometheus_client~=0.7',
 ]
