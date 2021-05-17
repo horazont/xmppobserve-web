@@ -31,7 +31,7 @@ v1 = quart_cors.cors(
     allow_origin="*",
     allow_methods=["POST", "OPTIONS"],
     allow_credentials=False,
-    allow_headers=["Content-Type", "X-Yada"],
+    allow_headers=["Content-Type", "content-type"],
 )
 
 
